@@ -1,0 +1,534 @@
+!SESSION 2024-02-20 13:30:18.299 -----------------------------------------------
+eclipse.buildId=4.26.0.20221201-1200
+java.version=17.0.5
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY org.eclipse.emf.ecp.ide.editor.view 4 0 2024-02-20 13:30:23.088
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.ecp.ide.editor.view [257]
+  Unresolved requirement: Require-Bundle: org.eclipse.emfforms.editor; bundle-version="[1.27.0,1.28.0)"
+    -> Bundle-SymbolicName: org.eclipse.emfforms.editor; bundle-version="1.27.0.20221109-1132"; singleton:="true"
+       org.eclipse.emfforms.editor [431]
+         No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.emfforms.spi.editor; version="[1.27.0,1.28.0)"
+    -> Export-Package: org.eclipse.emfforms.spi.editor; bundle-symbolic-name="org.eclipse.emfforms.editor"; bundle-version="1.27.0.20221109-1132"; version="1.27.0"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"] because it is exposed to package 'org.eclipse.swt.widgets' from resources org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"] and org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.edit.ui)(&(bundle-version>=2.11.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.emf.edit.ui
+  org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.ecp.view.core.swt)(&(bundle-version>=1.27.0)(!(bundle-version>=1.28.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.27.0.20221109-1132"; osgi.wiring.bundle="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"
+  org.eclipse.emf.ecp.view.core.swt [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.swt.widgets)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: org.eclipse.swt.widgets
+  org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.ecp.ide.editor.view.templatebridge 4 0 2024-02-20 13:30:23.168
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.ecp.ide.editor.view.templatebridge [258]
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.ecp.view.template.tooling; bundle-version="[1.27.0,1.28.0)"
+    -> Bundle-SymbolicName: org.eclipse.emf.ecp.view.template.tooling; bundle-version="1.27.0.20221109-1132"; singleton:="true"
+       org.eclipse.emf.ecp.view.template.tooling [325]
+         Unresolved requirement: Require-Bundle: org.eclipse.emfforms.editor; bundle-version="[1.27.0,1.28.0)"
+           -> Bundle-SymbolicName: org.eclipse.emfforms.editor; bundle-version="1.27.0.20221109-1132"; singleton:="true"
+              org.eclipse.emfforms.editor [431]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emf.ecp.view.template.tooling [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.template.tooling"; singleton:="true"] because it is exposed to package 'org.eclipse.swt.widgets' from resources org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"] and org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emf.ecp.view.template.tooling [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.template.tooling"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.ui)(&(bundle-version>=3.100.0)(!(bundle-version>=4.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.ui
+  org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.emf.ecp.view.template.tooling [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.template.tooling"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.ecp.view.core.swt)(&(bundle-version>=1.27.0)(!(bundle-version>=1.28.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.27.0.20221109-1132"; osgi.wiring.bundle="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"
+  org.eclipse.emf.ecp.view.core.swt [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.swt.widgets)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: org.eclipse.swt.widgets
+  org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.ecp.view.model.preview.e3 4 0 2024-02-20 13:30:23.345
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.ecp.view.model.preview.e3 [303]
+  Unresolved requirement: Require-Bundle: org.eclipse.emfforms.editor.viewmodel; bundle-version="[1.27.0,1.28.0)"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.ecp.ide.editor.view; bundle-version="[1.27.0,1.28.0)"
+    -> Bundle-SymbolicName: org.eclipse.emf.ecp.ide.editor.view; bundle-version="1.27.0.20221109-1132"; singleton:="true"
+       org.eclipse.emf.ecp.ide.editor.view [257]
+         Unresolved requirement: Require-Bundle: org.eclipse.emfforms.editor; bundle-version="[1.27.0,1.28.0)"
+           -> Bundle-SymbolicName: org.eclipse.emfforms.editor; bundle-version="1.27.0.20221109-1132"; singleton:="true"
+              org.eclipse.emfforms.editor [431]
+                No resolution report for the bundle.         Unresolved requirement: Import-Package: org.eclipse.emfforms.spi.editor; version="[1.27.0,1.28.0)"
+           -> Export-Package: org.eclipse.emfforms.spi.editor; bundle-symbolic-name="org.eclipse.emfforms.editor"; bundle-version="1.27.0.20221109-1132"; version="1.27.0"
+  Unresolved requirement: Require-Bundle: org.eclipse.emfforms.editor; bundle-version="[1.27.0,1.28.0)"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.emfforms.editor; bundle-version="1.27.0.20221109-1132"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"] because it is exposed to package 'org.eclipse.swt.widgets' from resources org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"] and org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.edit.ui)(&(bundle-version>=2.11.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.emf.edit.ui
+  org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.ecp.view.core.swt)(&(bundle-version>=1.27.0)(!(bundle-version>=1.28.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.27.0.20221109-1132"; osgi.wiring.bundle="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"
+  org.eclipse.emf.ecp.view.core.swt [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.swt.widgets)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: org.eclipse.swt.widgets
+  org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.ecp.view.template.tooling 4 0 2024-02-20 13:30:23.422
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.ecp.view.template.tooling [325]
+  Unresolved requirement: Require-Bundle: org.eclipse.emfforms.editor; bundle-version="[1.27.0,1.28.0)"
+    -> Bundle-SymbolicName: org.eclipse.emfforms.editor; bundle-version="1.27.0.20221109-1132"; singleton:="true"
+       org.eclipse.emfforms.editor [431]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emf.ecp.view.template.tooling [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.template.tooling"; singleton:="true"] because it is exposed to package 'org.eclipse.swt.widgets' from resources org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"] and org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emf.ecp.view.template.tooling [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.template.tooling"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.ui)(&(bundle-version>=3.100.0)(!(bundle-version>=4.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.ui
+  org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.emf.ecp.view.template.tooling [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.template.tooling"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.ecp.view.core.swt)(&(bundle-version>=1.27.0)(!(bundle-version>=1.28.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.27.0.20221109-1132"; osgi.wiring.bundle="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"
+  org.eclipse.emf.ecp.view.core.swt [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.swt.widgets)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: org.eclipse.swt.widgets
+  org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.parsley.dsl 4 0 2024-02-20 13:30:23.471
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.parsley.dsl [370]
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.launch; resolution:="optional"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emf.parsley.dsl [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221129-1056"; osgi.identity="org.eclipse.emf.parsley.dsl"; singleton:="true"] because it is exposed to package 'com.google.common.util.concurrent.internal' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] and com.google.guava.failureaccess [osgi.identity; type="osgi.bundle"; version:Version="1.0.2"; osgi.identity="com.google.guava.failureaccess"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emf.parsley.dsl [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221129-1056"; osgi.identity="org.eclipse.emf.parsley.dsl"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.emf.parsley.dsl [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221129-1056"; osgi.identity="org.eclipse.emf.parsley.dsl"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.emf.parsley)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.14.0.v20221128-1543"; osgi.wiring.bundle="org.eclipse.emf.parsley"; singleton:="true"
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+    import: (&(osgi.wiring.package=com.google.common.util.concurrent.internal)(&(version>=1.0.0)(!(version>=2.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.util.concurrent.internal
+  com.google.guava.failureaccess [osgi.identity; type="osgi.bundle"; version:Version="1.0.2"; osgi.identity="com.google.guava.failureaccess"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.parsley.dsl.additional.builder 4 0 2024-02-20 13:30:23.550
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.parsley.dsl.additional.builder [371]
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.parsley.dsl
+    -> Bundle-SymbolicName: org.eclipse.emf.parsley.dsl; bundle-version="1.14.0.v20221129-1056"; singleton:="true"
+       org.eclipse.emf.parsley.dsl [370]
+         Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.launch; resolution:="optional"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emf.parsley.dsl.additional.builder [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221128-1543"; osgi.identity="org.eclipse.emf.parsley.dsl.additional.builder"; singleton:="true"] because it is exposed to package 'com.google.common.util.concurrent.internal' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] and com.google.guava.failureaccess [osgi.identity; type="osgi.bundle"; version:Version="1.0.2"; osgi.identity="com.google.guava.failureaccess"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emf.parsley.dsl.additional.builder [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221128-1543"; osgi.identity="org.eclipse.emf.parsley.dsl.additional.builder"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend.lib)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.emf.parsley.dsl.additional.builder [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221128-1543"; osgi.identity="org.eclipse.emf.parsley.dsl.additional.builder"; singleton:="true"]
+    require: (osgi.wiring.bundle=com.google.guava)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="32.1.3.jre"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+    import: (&(osgi.wiring.package=com.google.common.util.concurrent.internal)(&(version>=1.0.0)(!(version>=2.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.util.concurrent.internal
+  com.google.guava.failureaccess [osgi.identity; type="osgi.bundle"; version:Version="1.0.2"; osgi.identity="com.google.guava.failureaccess"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.parsley.dsl.ide 4 0 2024-02-20 13:30:23.584
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.parsley.dsl.ide [372]
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.parsley.dsl
+    -> Bundle-SymbolicName: org.eclipse.emf.parsley.dsl; bundle-version="1.14.0.v20221129-1056"; singleton:="true"
+       org.eclipse.emf.parsley.dsl [370]
+         Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.launch; resolution:="optional"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emf.parsley.dsl.ide [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221128-1543"; osgi.identity="org.eclipse.emf.parsley.dsl.ide"; singleton:="true"] because it is exposed to package 'com.google.common.util.concurrent.internal' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] and com.google.guava.failureaccess [osgi.identity; type="osgi.bundle"; version:Version="1.0.2"; osgi.identity="com.google.guava.failureaccess"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emf.parsley.dsl.ide [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221128-1543"; osgi.identity="org.eclipse.emf.parsley.dsl.ide"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.emf.parsley.dsl)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.emf.parsley.dsl
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.emf.parsley.dsl.ide [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221128-1543"; osgi.identity="org.eclipse.emf.parsley.dsl.ide"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.emf.parsley.dsl)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.14.0.v20221129-1056"; osgi.wiring.bundle="org.eclipse.emf.parsley.dsl"; singleton:="true"
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+    import: (&(osgi.wiring.package=com.google.common.util.concurrent.internal)(&(version>=1.0.0)(!(version>=2.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.util.concurrent.internal
+  com.google.guava.failureaccess [osgi.identity; type="osgi.bundle"; version:Version="1.0.2"; osgi.identity="com.google.guava.failureaccess"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.parsley.dsl.ui 4 0 2024-02-20 13:30:23.647
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.parsley.dsl.ui [373]
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.parsley.dsl.additional.builder
+    -> Bundle-SymbolicName: org.eclipse.emf.parsley.dsl.additional.builder; bundle-version="1.14.0.v20221128-1543"; singleton:="true"
+       org.eclipse.emf.parsley.dsl.additional.builder [371]
+         Unresolved requirement: Require-Bundle: org.eclipse.emf.parsley.dsl
+           -> Bundle-SymbolicName: org.eclipse.emf.parsley.dsl; bundle-version="1.14.0.v20221129-1056"; singleton:="true"
+              org.eclipse.emf.parsley.dsl [370]
+                Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.launch; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.parsley.dsl; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.emf.parsley.dsl; bundle-version="1.14.0.v20221129-1056"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.parsley.dsl.ide
+    -> Bundle-SymbolicName: org.eclipse.emf.parsley.dsl.ide; bundle-version="1.14.0.v20221128-1543"; singleton:="true"
+       org.eclipse.emf.parsley.dsl.ide [372]
+         Unresolved requirement: Require-Bundle: org.eclipse.emf.parsley.dsl
+           -> Bundle-SymbolicName: org.eclipse.emf.parsley.dsl; bundle-version="1.14.0.v20221129-1056"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emf.parsley.dsl.ui [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221129-1056"; osgi.identity="org.eclipse.emf.parsley.dsl.ui"; singleton:="true"] because it is exposed to package 'com.google.common.util.concurrent.internal' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] and com.google.guava.failureaccess [osgi.identity; type="osgi.bundle"; version:Version="1.0.2"; osgi.identity="com.google.guava.failureaccess"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emf.parsley.dsl.ui [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221129-1056"; osgi.identity="org.eclipse.emf.parsley.dsl.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.emf.parsley.dsl)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.emf.parsley.dsl
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.emf.parsley.dsl.ui [osgi.identity; type="osgi.bundle"; version:Version="1.14.0.v20221129-1056"; osgi.identity="org.eclipse.emf.parsley.dsl.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.emf.parsley.dsl)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.14.0.v20221129-1056"; osgi.wiring.bundle="org.eclipse.emf.parsley.dsl"; singleton:="true"
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+    import: (&(osgi.wiring.package=com.google.common.util.concurrent.internal)(&(version>=1.0.0)(!(version>=2.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.util.concurrent.internal
+  com.google.guava.failureaccess [osgi.identity; type="osgi.bundle"; version:Version="1.0.2"; osgi.identity="com.google.guava.failureaccess"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emfforms.editor 4 0 2024-02-20 13:30:23.835
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emfforms.editor [431]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"] because it is exposed to package 'org.eclipse.swt.widgets' from resources org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"] and org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.edit.ui)(&(bundle-version>=2.11.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.emf.edit.ui
+  org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.ecp.view.core.swt)(&(bundle-version>=1.27.0)(!(bundle-version>=1.28.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.27.0.20221109-1132"; osgi.wiring.bundle="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"
+  org.eclipse.emf.ecp.view.core.swt [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.swt.widgets)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: org.eclipse.swt.widgets
+  org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emfforms.editor.ecore 4 0 2024-02-20 13:30:23.905
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emfforms.editor.ecore [432]
+  Unresolved requirement: Require-Bundle: org.eclipse.emfforms.editor; bundle-version="[1.27.0,1.28.0)"
+    -> Bundle-SymbolicName: org.eclipse.emfforms.editor; bundle-version="1.27.0.20221109-1132"; singleton:="true"
+       org.eclipse.emfforms.editor [431]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emfforms.editor.ecore [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor.ecore"; singleton:="true"] because it is exposed to package 'org.eclipse.swt.widgets' from resources org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"] and org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emfforms.editor.ecore [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor.ecore"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jface)(&(bundle-version>=3.10.0)(!(bundle-version>=4.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jface
+  org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.emfforms.editor.ecore [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor.ecore"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.ecp.view.core.swt)(&(bundle-version>=1.27.0)(!(bundle-version>=1.28.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.27.0.20221109-1132"; osgi.wiring.bundle="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"
+  org.eclipse.emf.ecp.view.core.swt [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.swt.widgets)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: org.eclipse.swt.widgets
+  org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emfforms.editor.genmodel 4 0 2024-02-20 13:30:23.965
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emfforms.editor.genmodel [433]
+  Unresolved requirement: Require-Bundle: org.eclipse.emfforms.editor; bundle-version="[1.27.0,1.28.0)"
+    -> Bundle-SymbolicName: org.eclipse.emfforms.editor; bundle-version="1.27.0.20221109-1132"; singleton:="true"
+       org.eclipse.emfforms.editor [431]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"] because it is exposed to package 'org.eclipse.swt.widgets' from resources org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"] and org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.edit.ui)(&(bundle-version>=2.11.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.emf.edit.ui
+  org.eclipse.swt [osgi.identity; type="osgi.bundle"; version:Version="3.122.0.v20221123-2302"; osgi.identity="org.eclipse.swt"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.emfforms.editor [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emfforms.editor"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.emf.ecp.view.core.swt)(&(bundle-version>=1.27.0)(!(bundle-version>=1.28.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.27.0.20221109-1132"; osgi.wiring.bundle="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"
+  org.eclipse.emf.ecp.view.core.swt [osgi.identity; type="osgi.bundle"; version:Version="1.27.0.20221109-1132"; osgi.identity="org.eclipse.emf.ecp.view.core.swt"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.swt.widgets)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: org.eclipse.swt.widgets
+  org.eclipse.rap.filedialog [osgi.identity; type="osgi.bundle"; version:Version="3.27.0.20231002-1022"; osgi.identity="org.eclipse.rap.filedialog"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.gef.dot.ide 4 0 2024-02-20 13:30:24.288
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.gef.dot.ide [1073]
+  Unresolved requirement: Require-Bundle: org.eclipse.gef.dot; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.gef.dot; bundle-version="5.1.4.202311221639"; singleton:="true"
+       org.eclipse.gef.dot [1072]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.gef.dot [osgi.identity; type="osgi.bundle"; version:Version="5.1.4.202311221639"; osgi.identity="org.eclipse.gef.dot"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.gef.dot [osgi.identity; type="osgi.bundle"; version:Version="5.1.4.202311221639"; osgi.identity="org.eclipse.gef.dot"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.26.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.gef.dot [osgi.identity; type="osgi.bundle"; version:Version="5.1.4.202311221639"; osgi.identity="org.eclipse.gef.dot"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.gef.common)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.3.202311221639"; osgi.wiring.bundle="org.eclipse.gef.common"
+  org.eclipse.gef.common [osgi.identity; type="osgi.bundle"; version:Version="5.0.3.202311221639"; osgi.identity="org.eclipse.gef.common"]
+    import: (&(osgi.wiring.package=com.google.common.reflect)(version>=12.0.0))
+     |
+    export: osgi.wiring.package: com.google.common.reflect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.gef.dot.ui 4 0 2024-02-20 13:30:24.421
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.gef.dot.ui [1074]
+  Unresolved requirement: Require-Bundle: org.eclipse.gef.dot.ide; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.gef.dot.ide; bundle-version="5.1.3.202311221639"; singleton:="true"
+       org.eclipse.gef.dot.ide [1073]
+         Unresolved requirement: Require-Bundle: org.eclipse.gef.dot; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.gef.dot; bundle-version="5.1.4.202311221639"; singleton:="true"
+              org.eclipse.gef.dot [1072]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.gef.dot; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.gef.dot; bundle-version="5.1.4.202311221639"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.gef.dot.ui [osgi.identity; type="osgi.bundle"; version:Version="5.1.4.202311221639"; osgi.identity="org.eclipse.gef.dot.ui"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.gef.dot.ui [osgi.identity; type="osgi.bundle"; version:Version="5.1.4.202311221639"; osgi.identity="org.eclipse.gef.dot.ui"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtext.builder)(&(bundle-version>=2.17.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext.builder
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.gef.dot.ui [osgi.identity; type="osgi.bundle"; version:Version="5.1.4.202311221639"; osgi.identity="org.eclipse.gef.dot.ui"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.gef.common)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.3.202311221639"; osgi.wiring.bundle="org.eclipse.gef.common"
+  org.eclipse.gef.common [osgi.identity; type="osgi.bundle"; version:Version="5.0.3.202311221639"; osgi.identity="org.eclipse.gef.common"]
+    import: (&(osgi.wiring.package=com.google.common.reflect)(version>=12.0.0))
+     |
+    export: osgi.wiring.package: com.google.common.reflect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-02-20 13:30:43.131
+!MESSAGE Atención: no está definida la variable de entorno «HOME». Se usará el siguiente directorio para almacenar la configuración global de usuario de Git y como ubicación predeterminada para guardar los repositorios: «C:\Users\Liliaam».
+En caso contrario se debe definir la variable de entorno «HOME» y reiniciar Eclipse. De no ser así, Git para Windows y Egit se comportarán de manera diferente por estar viendo diferentes opciones de configuración.
+Este aviso se puede desactivar en la página de preferencias de confirmaciones y avisos de colaboración con Git.
